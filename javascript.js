@@ -33,3 +33,14 @@ function divide(a,b){
         console.log("Non number operand");
     }
 }
+
+function updateDisplay(input){
+    let temp = document.getElementsByClassName('calculator_display')[0];
+    if (temp.textContent == 0){
+        temp.textContent = input;
+    }
+    else{
+        temp.textContent = temp.textContent + input;
+    }
+    
+}

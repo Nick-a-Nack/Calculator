@@ -1,10 +1,12 @@
 body{
     display: flex;
+    
 }
 
 .calculator_body{
     display: flex;
     flex-direction: column;
+    align-self: center;
     margin-left: auto;
     margin-right: auto;
     background-color: gray;
@@ -13,14 +15,19 @@ body{
 .calculator_display{
     display: flex;
     align-items: center;
+    justify-content: end;
     font-size:larger;
+    flex-grow: 1;
     background-color: white;
     border: 2px solid gray;
+    padding: 3px;
+    margin: 8px;
     border-radius: 5px;
 }
 
 .button_row{
     display: flex;
+    justify-content: space-evenly;
 }
 
 .button_column{

@@ -38,6 +38,10 @@ function divide(a,b){
     }
 }
 
+/*
+updateDisplay either adds the last clicked digit button to the rightmost part of 
+the display or clears and starts  if an operator has been selected and input2 is null
+*/
 function updateDisplay(input){
     let temp = document.getElementsByClassName('calculator_display')[0];
     if (temp.textContent == 0){
@@ -46,10 +50,13 @@ function updateDisplay(input){
     else{
         temp.textContent = temp.textContent + input;
     }
-//Checks for where values should be stored. First test is for the first digit of first operand
-//Second test is if you are still inputting the first operand before giving it an operator
-//Third test is to update second operand if an operator has been selected already
-    if (inputA == null){
+/*
+Checks for where values should be stored. First test is for the first digit of first operand
+Second test is if you are still inputting the first operand before giving it an operator
+Third test is to update second operand if an operator has been selected already
+*/
+
+if (inputA == null){
         inputA = Number.parseFloat(temp.textContent);
     }
     else if (inputA != null && operator == null){
@@ -59,6 +66,14 @@ function updateDisplay(input){
         inputB = Number.parseFloat(temp.textContent);
     }
     
+}
+
+function clear(){
+    let temp = document.getElementsByClassName('calculator_display')[0];
+    temp.textContent = '0';
+    inputA = null;
+    inputB = null;
+    operator = null;
 }
 
 function operate(inputA, inputB, operator){
@@ -82,9 +97,5 @@ function operate(inputA, inputB, operator){
             console.log("Something went wrong here ..");
             return -1;
         }
-    }
-    
-    if (operator == '+'){
-        return add(inputA, inputB);
     }
 }

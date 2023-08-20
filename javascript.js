@@ -99,3 +99,47 @@ function operate(inputA, inputB, operator){
         }
     }
 }
+
+window.onload = function(){
+
+    let temp = document.getElementsByClassName('calculator_body')[0];
+
+    temp.addEventListener('click', (event) => {
+        const isButton = event.target.nodeName === 'BUTTON';
+
+        if (!isButton){
+            return;
+        }
+        else{
+            let id = event.target.id;
+
+            if (Number.isNaN(id)){
+                if (id == "multiply"){
+
+                    return;
+                }
+                if (id == "divide"){
+
+                    return;
+                }
+                if (id == "add"){
+
+                    return;
+                }
+                if (id == "subtract"){
+
+                    return;
+                }
+                if (id == "clear"){
+
+                    return;
+                }
+            }
+            else{
+                updateDisplay(Number.parseInt(id));
+                return;
+            }
+        
+        }
+    });
+};
